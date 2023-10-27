@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>About REBEAT</title>
+    <style>
+        @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #fff;
+            color: #333;
+            font-family: Pretendard;
+        }
+        .container {
+            display: flex;
+            justify-content:center ;
+	        align-items:center ;
+	        height :100vh ; 
+	        flex-direction :column ; 
+        }
+	    .buttons {   
+	        display:flex ;   
+	        justify-content :space-around ;  
+	        width :100% ;  
+	        max-width :600px ;
+	    }  
+
+        .button {
+            display:inline-block ;
+	        background-color:#333333 ;
+	        color:#d9d9d9 ;
+	        padding :10px 20px ;
+	        text-align:center ;
+	        border-radius :20px ;
+	        text-decoration:none ;
+            transition-duration :0.4s;
+	    }
+
+	    .button:hover {   
+	       background-color:#000 ;   
+	       color:#fff ; 
+	    } 
+
+		/* Add this for the animation */
+		@keyframes fadeInUp {
+			from {
+				transform: translate3d(0,40px,0);
+				opacity: 0;
+			}
+
+			to {
+				transform: translate3d(0,0,0);
+				opacity: 1;
+			}
+	   }
+
+	   /* Apply the animation to your elements */
+	   h1.fadeInUp,
+	   a.button.fadeInUp{
+		   opacity: 0; /* make them invisible initially */
+		   animation-name: fadeInUp; /* reference the defined animation */
+		   animation-duration: 1s; /* duration of the animation */
+		   animation-fill-mode:both; /* keep the end state after the animation finishes */
+	   }
+    </style>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+
+<div class="container">
+    <h1 id="title" class="fadeInUp">REBEAT 둘러보기</h1>
+
+    <!-- Change the href value to your desired link -->
+    <div id="btnContainer" class="buttons">
+      <a href="https://youtu.be/f3aqafxevtc" class="button fadeInUp">REBEAT 제작 비하인드</a> 
+      <a href="https://youtu.be/KjgJnElhPDw" class="button fadeInUp">REBEAT 사용방법</a> 
+      <a href="https://github.com/BBIYAKYEE7/KCF2023" class="button fadeInUp">Button 3</a> 
+   </div>
+
+</div>
+
+<!-- Add this script to apply the animation sequentially -->
+<script>
+window.onload = function() {
+    var delay = 500; // delay in ms
+    document.getElementById('title').style.animationDelay = '0s';
+
+    var buttons = document.getElementById('btnContainer').getElementsByClassName('button');
+    for (var i=0; i<buttons.length; i++) {
+        buttons[i].style.animationDelay = (i+1)*delay/1000 + 's'; // convert ms to s
+    }
+}
+</script>
+
+</body>
+</html>
