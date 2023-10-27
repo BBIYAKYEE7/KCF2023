@@ -4,6 +4,7 @@
     <title>About REBEAT</title>
     <style>
         @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+		@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap');
         body {
             margin: 0;
             padding: 0;
@@ -14,54 +15,60 @@
         .container {
             display: flex;
             justify-content:center ;
-	        align-items:center ;
-	        height :100vh ; 
-	        flex-direction :column ; 
+            align-items:center ;
+            height :100vh ; 
+            flex-direction :column ; 
         }
-	    .buttons {   
-	        display:flex ;   
-	        justify-content :space-around ;  
-	        width :100% ;  
-	        max-width :600px ;
-	    }  
+        .buttons {   
+            display:flex ;   
+            justify-content :space-around ;  
+            width :100% ;  
+            max-width :600px ;
+            flex-direction :column ; /* 버튼들을 세로로 정렬 */
+        }  
 
         .button {
             display:inline-block ;
-	        background-color:#333333 ;
-	        color:#d9d9d9 ;
-	        padding :10px 20px ;
-	        text-align:center ;
-	        border-radius :20px ;
-	        text-decoration:none ;
+            background-color:#333333 ;
+            color:#d9d9d9 ;
+            padding :10px 20px ;
+            text-align:center ;
+            border-radius :20px ;
+            text-decoration:none ;
             transition-duration :0.4s;
-	    }
+            margin-bottom: 20px;
+			margin-left: 70px;
+			margin-right: 70px;
+			font-family: 'Montserrat', sans-serif;
+            flex-grow: 1; /* 버튼의 크기 비율을 조정 */
+        }
 
-	    .button:hover {   
-	       background-color:#000 ;   
-	       color:#fff ; 
-	    } 
+        .button:hover {   
+           background-color:#000 ;   
+           color:#fff ; 
+        } 
 
-		/* Add this for the animation */
-		@keyframes fadeInUp {
-			from {
-				transform: translate3d(0,40px,0);
-				opacity: 0;
-			}
+        /* Add this for the animation */
+        @keyframes fadeInUp {
+            from {
+                transform: translate3d(0,40px,0);
+                opacity: 0;
+            }
 
-			to {
-				transform: translate3d(0,0,0);
-				opacity: 1;
-			}
-	   }
+            to {
+                transform: translate3d(0,0,0);
+                opacity: 1;
+            }
+       }
 
-	   /* Apply the animation to your elements */
-	   h1.fadeInUp,
-	   a.button.fadeInUp{
-		   opacity: 0; /* make them invisible initially */
-		   animation-name: fadeInUp; /* reference the defined animation */
-		   animation-duration: 1s; /* duration of the animation */
-		   animation-fill-mode:both; /* keep the end state after the animation finishes */
-	   }
+       /* Apply the animation to your elements */
+       h1.fadeInUp,
+       a.button.fadeInUp{
+           opacity: 0; /* make them invisible initially */
+           animation-name: fadeInUp; /* reference the defined animation */
+           animation-duration: 1s; /* duration of the animation */
+           animation-fill-mode:both; /* keep the end state after the animation finishes */
+       }
     </style>
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -75,7 +82,7 @@
     <div id="btnContainer" class="buttons">
       <a href="https://youtu.be/f3aqafxevtc" class="button fadeInUp">REBEAT 제작 비하인드</a> 
       <a href="https://youtu.be/KjgJnElhPDw" class="button fadeInUp">REBEAT 사용방법</a> 
-      <a href="https://github.com/BBIYAKYEE7/KCF2023" class="button fadeInUp">Button 3</a> 
+      <a href="https://github.com/BBIYAKYEE7/KCF2023" class="button fadeInUp">REBEAT 소스코드</a> 
    </div>
 
 </div>
